@@ -1,0 +1,6 @@
+vk_cloud:
+  hosts: 
+    89.208.223.22
+  vars:
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: ~/.ssh/lab4.pem

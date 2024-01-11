@@ -1,0 +1,6 @@
+- hosts: vk_cloud
+  become: true
+  roles:
+    - role: 'web_app'
+      image: "acceptasis/my-python-app:latest"
+      ports: "8008:8008"

@@ -1,0 +1,8 @@
+---
+- name: Install application
+  include_tasks: run.yml
+  when: not app_wipe
+
+- name: Wipe appliction
+  include_tasks: wipe.yml
+  when: app_wipe

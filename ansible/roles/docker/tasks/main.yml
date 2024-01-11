@@ -1,0 +1,11 @@
+---
+- name: Execute apt update
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- include_tasks:
+    install_docker.yml
+    
+- include_tasks:
+    install_compose.yml

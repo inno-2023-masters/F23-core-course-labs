@@ -1,0 +1,7 @@
+---
+- name: Docker install using apt
+  vars:
+    docker_install_compose: false
+    docker_install_compose_plugin: false
+  ansible.builtin.import_role:
+    name: geerlingguy.docker
