@@ -1,0 +1,15 @@
+---
+- name: Stop appliation
+  docker_compose:
+    project_src: "/opt/composes/acceptasis"
+    state: absent
+    
+- name: Delete image from docker
+  docker_image:
+    name: "{{ image }}"
+    state: absent
+
+- name: Remove compose directory
+  ansible.builtin.file:
+    path: "/opt/composes/acceptasis"
+    state: absent

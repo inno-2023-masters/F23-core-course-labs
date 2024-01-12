@@ -1,0 +1,17 @@
+---
+- name: Create a directory if it does not exist
+  become: true
+  ansible.builtin.file:
+    path: /opt/composes/acceptasis
+    state: directory
+    
+- name: Create docker-compose
+  become: true
+  copy:
+    src: docker-compose.yml
+    dest: /opt/composes/acceptasis/docker-compose.yml
+    
+- name: Run app
+  docker_compose:
+    project_src: /opt/composes/acceptasis
+    state: present
